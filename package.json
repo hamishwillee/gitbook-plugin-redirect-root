@@ -20,7 +20,7 @@
         "properties": {
             "url": {
                 "type": "string",
-                "default": 'en/',
+                "default": "",
                 "description": "The destination where an URL to root will redirect."
             }
             
