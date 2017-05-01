@@ -27,7 +27,8 @@ module.exports = {
             
             if (current_language=='') {
                 //console.log('No language, so output is root directory, not language directory');
-                var confUrl = this.config.get("pluginsConfig.redirect-to-lang.url");
+                var confUrl = this.config.get("pluginsConfig.redirect-root.url");
+                //var baseUrl = this.config.get("pluginsConfig.redirect-root.baseurl");
                 this.output.writeFile('index.html', content(confUrl));
             }
             
