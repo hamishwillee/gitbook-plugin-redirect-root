@@ -1,5 +1,5 @@
 module.exports = {
-
+    hooks: {
         // This is called after the book generation
         "finish": function() {
             console.log("finish!");
@@ -7,6 +7,8 @@ module.exports = {
             var redirectConf = this.config.get("pluginsConfig.language");
             console.log("REDIRLANG", redirectConf);
         }
+        
+    } //end hooks
     
 };
 
