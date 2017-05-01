@@ -17,7 +17,6 @@ module.exports = {
         "finish": function() {
             //console.log("finish!");
 
-            
             // Infer current language using current output root. 
             // We need this so that we only output our redirect to the root
             var current_language=this.output.root().split('\\').pop().split('/').pop();
@@ -28,7 +27,6 @@ module.exports = {
             if (current_language=='') {
                 //console.log('No language, so output is root directory, not language directory');
                 var confUrl = this.config.get("pluginsConfig.redirect-root.url");
-                //var baseUrl = this.config.get("pluginsConfig.redirect-root.baseurl");
                 this.output.writeFile('index.html', content(confUrl));
             }
             
