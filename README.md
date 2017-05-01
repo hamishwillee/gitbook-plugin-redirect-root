@@ -14,7 +14,8 @@ The buttons can be configured in **book.json**:
     "pluginsConfig": {  
     
         "redirect-to-lang": {
-            "language":"zh"
+            "language":"zh",
+            "baseurl":"/"
         }
          
     } 
