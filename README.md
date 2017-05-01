@@ -15,7 +15,7 @@ The buttons can be configured in **book.json**:
     
         "redirect-to-lang": {
             "language":"zh",
-            "baseurl":"/"
+            "baseurl":"content/"
         }
          
     } 
@@ -24,4 +24,7 @@ The buttons can be configured in **book.json**:
 }
 ```
 
-The only config value is the language, and this will default to "en"
+The only config value are:
+
+* language - defaults to "en"
+* baseurl - defaults to "" - this is used if your content is hosted at some URL "above" the root
