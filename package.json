@@ -14,5 +14,16 @@
     "license": "BSD 3-clause New or Revised License ",
     "bugs": {
         "url": "https://github.com/hamishwillee/gitbook-plugin-redirect-to-lang"
+    },
+    
+    "gitbook": {
+        "properties": {
+            "language": {
+                "type": "string",
+                "default": "en",
+                "description": "The target language that will become the default/redirected root."
+            }
+        }
     }
+    
 }
