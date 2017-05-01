@@ -1,19 +1,19 @@
 {
-    "name": "gitbook-plugin-redirect-to-lang",
-    "description": "Creates a redirect in the root URL to the specified language root. This overwrites the default language selector",
+    "name": "gitbook-plugin-redirect-root",
+    "description": "Creates a redirect in the root URL to a specified location. This overwrites the default language selector",
     "main": "index.js",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "gitbook": ">=2.0.0"
     },
-    "homepage": "https://github.com/hamishwillee/gitbook-plugin-redirect-to-lang",
+    "homepage": "https://github.com/hamishwillee/gitbook-plugin-redirect-root",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hamishwillee/gitbook-plugin-redirect-to-lang.git"
+        "url": "https://github.com/hamishwillee/gitbook-plugin-redirect-root.git"
     },
     "license": "BSD 3-clause New or Revised License ",
     "bugs": {
-        "url": "https://github.com/hamishwillee/gitbook-plugin-redirect-to-lang"
+        "url": "https://github.com/hamishwillee/gitbook-plugin-redirect-root"
     },
     
     "gitbook": {

@@ -1,6 +1,6 @@
-# gitbook plugin redirect to lang
+# gitbook plugin redirect root
 
-This plugin is supposed to redirect the root to specified language. E.g. if user visits the base URL '/' they will be redirected to a language root ('en/') by default. 
+This plugin is redirects URLs to the root to any specified language. E.g. if user visits the base URL '/' they will be redirected to specified URL. This can be used to redirect to a particular language URL rather than the language selector.  
 
 ### Configuration
 
@@ -9,7 +9,7 @@ The buttons can be configured in **book.json**:
 ```js
 {   
     "plugins": [
-        "redirect-to-lang@git+https://github.com/hamishwillee/gitbook-plugin-redirect-to-lang.git"
+        "redirect-root@git+https://github.com/hamishwillee/gitbook-plugin-redirect-root.git"
     ],
     "pluginsConfig": {  
     
