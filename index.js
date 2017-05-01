@@ -1,58 +1,43 @@
-module.exports = {
-    hooks: {
-        // This is called after the book generation
-        "finish": function() {
-            console.log("finish!");
-            console.log("RUNON");
-            var redirectConf = this.config.get("pluginsConfig.language");
-            console.log("REDIRLANG", redirectConf);
-        }
-        
-    } //end hooks
-    
-};
-
-
-
-
-
-
-
-/*
-
 var url = require("url");
 var fs = require("fs");
 
 var content = function(path) {
-  var s = "<!DOCTYPE HTML><html><head><meta charset='UTF-8'><title>Redirecting... Page moved</title>" +
+  var s = "<!DOCTYPE HTML><html><head><meta charset='UTF-8'><title>Redirecting to book root</title>" +
         "<link rel='canonical' href='{}'><meta http-equiv=refresh content='0; url={:?}'></head>" +
-        "<body><h1>Redirecting... Page moved...</h1>" +
+        "<body><h1>Redirecting to book root</h1>" +
         "<p><a href='{}'>Click here if you are not redirected</a></p>" +
         "<script>window.location.href='{}';</script>" +
         "</body></html>";
   return s.replace(/\{\}/gm, path).replace(/\{\:\?\}/gm, encodeURI(path));
 };
 
-
 module.exports = {
-  hooks: {
-    "finish": function() {
-      var redirectConf = this.config.get("pluginsConfig.bulk-redirect");
-      var conf = JSON.parse(fs.readFileSync(redirectConf.redirectsFile, "utf-8"));
+    hooks: {
+        // This is called after the book generation
+        "finish": function() {
+            //console.log("finish!");
 
-      if (!conf || !conf.redirects) return;
+            
+            // Infer current language using current output root. 
+            // We need this so that we only output our redirect to the root
+            var current_language=this.output.root().split('\\').pop().split('/').pop();
+            if (current_language=='_book') {
+                current_language='';
+            }
 
-      var basepath = redirectConf.basepath || "/";
-      var g = this;
+            //var logtext = "\nCurrent_language: " + current_language + '\n';
+            //console.log(logtext);
+            
+            if (current_language=='') {
+                //console.log('No language, so output is root directory, not language directory');
+                var confLang = this.config.get("pluginsConfig.redirect-to-lang.language");
+                //console.log("Target language (default en): ", confLang);
+                this.output.writeFile('index.html', content(confLang+'/'));
+            }
+            
 
-      conf.redirects.forEach(function (item) {
-        if (!item.from || !item.to) return;
-        var resolved = url.resolve(basepath, item.to);
-        g.output.writeFile(item.from, content(resolved));
-        g.log.debug("Redirect " + item.from + " -> " + resolved + "\n");
-      });
-    }
-  }
+        }
+        
+    } //end hooks
+    
 };
-
-*/
