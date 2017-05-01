@@ -14,8 +14,7 @@ The buttons can be configured in **book.json**:
     "pluginsConfig": {  
     
         "redirect-to-lang": {
-            "language":"zh",
-            "baseurl":"content/"
+            "url":"https://hamishwillee.gitbooks.io/minimal-test-book-for-testing-gitbook-changes/",
         }
          
     } 
@@ -26,5 +25,4 @@ The buttons can be configured in **book.json**:
 
 The only config value are:
 
-* language - defaults to "en"
-* baseurl - defaults to "" - this is used if your content is hosted at some URL "above" the root
+* url - just the URL you want to redirect to. 

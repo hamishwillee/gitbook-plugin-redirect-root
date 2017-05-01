@@ -24,21 +24,11 @@ module.exports = {
             if (current_language=='_book') {
                 current_language='';
             }
-
-            //var logtext = "\nCurrent_language: " + current_language + '\n';
-            //console.log(logtext);
             
             if (current_language=='') {
                 //console.log('No language, so output is root directory, not language directory');
-                var confLang = this.config.get("pluginsConfig.redirect-to-lang.language");
-                var confBaseUrl = this.config.get("pluginsConfig.redirect-to-lang.baseurl");
-                var baseurl= (confBaseUrl ? confBaseUrl : '')
-                //console.log("BASEURL: ", baseurl);
-                var langurl= (confLang ? confLang + '/' : '');
-                //console.log("LANGURL: ", langurl);
-                var targeturl= baseurl+langurl
-                //console.log("Target url: ", targeturl);
-                this.output.writeFile('index.html', content(targeturl));
+                var confUrl = this.config.get("pluginsConfig.redirect-to-lang.url");
+                this.output.writeFile('index.html', content(confUrl));
             }
             
 

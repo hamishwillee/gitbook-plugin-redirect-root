@@ -18,15 +18,10 @@
     
     "gitbook": {
         "properties": {
-            "language": {
+            "url": {
                 "type": "string",
-                "default": "en",
-                "description": "The target language that will become the default/redirected root."
-            },
-            "baseURL": {
-                "type": "string",
-                "default": "",
-                "description": "Optional base URL (e.g. 'content/'). Include trailing slash."
+                "default": '',
+                "description": "The destination where an URL to root will redirect."
             }
             
         }
